@@ -1,0 +1,27 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mini-React VNode Engine</title>
+  <link rel="stylesheet" href="./style.css">
+  <script src="./main.js" defer></script>
+</head>
+<body>
+  <main>
+    <section id="app" aria-labelledby="page-title">
+      <h1 id="page-title">Mini-React VNode &amp; Mounting Engine</h1>
+    </section>
+  </main>
+</body>
+</html>
+
+
+const xssTest = createElement(
+  "p",
+  { id: "xss-test" },
+  "<script>alert(1)</script>"
+);
+
+renderToDOM(xssTest, app);
